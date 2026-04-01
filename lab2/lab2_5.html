@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 10px;
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            font-size: 18px;
+            padding: 6px;
+            width: 260px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 480px;
+            height: 180px;
+            resize: none;
+        }
+
+        .small-control {
+            width: auto;
+        }
+
+        .buttons input {
+            font-size: 18px;
+            padding: 6px 18px;
+            margin-right: 10px;
+        }
+
+        .inline label {
+            margin-right: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Форма регистрации пользователя</h1>
+
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="email">E-mail</label></td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="Введите e-mail" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="password">Пароль</label></td>
+                <td>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Пол</td>
+                <td class="inline">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Мужчина</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Женщина</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="year">Год рождения</label></td>
+                <td>
+                    <select id="year" name="year" class="small-control">
+                        <option>1981</option>
+                        <option>1982</option>
+                        <option>1983</option>
+                        <option>1984</option>
+                        <option>1985</option>
+                        <option>1986</option>
+                        <option>1987</option>
+                        <option>1988</option>
+                        <option>1989</option>
+                        <option>1990</option>
+                    </select>
+                    -й
+                </td>
+            </tr>
+
+            <tr>
+                <td>Я знаю</td>
+                <td>
+                    <div>
+                        <input type="checkbox" id="ru" name="lang_ru" checked disabled>
+                        <label for="ru">Русский</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="es" name="lang_es">
+                        <label for="es">Испанский</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="de" name="lang_de">
+                        <label for="de">Немецкий</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="en" name="lang_en">
+                        <label for="en">Английский</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="cn" name="lang_cn">
+                        <label for="cn">Китайский</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="about">Обо мне</label></td>
+                <td>
+                    <textarea id="about" name="about" placeholder="Напишите коротко о себе"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="buttons">
+                    <input type="submit" value="Готово">
+                    <input type="reset" value="Очистить">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
