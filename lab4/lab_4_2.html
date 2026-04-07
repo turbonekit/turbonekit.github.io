@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Оформление вертикального меню</title>
+	<style>
+		html {
+			background: #f0f0f0;
+		}
+
+		body {
+			font-family: Georgia, serif;
+		}
+			
+		.menu {
+			width: 200px;
+			background: #fff;
+			padding: 8px 0;
+		}
+			
+		.menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0 12px;
+		}
+			
+		.menu li {
+			margin: 8px 0;
+			position: relative;
+		}
+			
+		.menu li a {
+			display: inline-block;
+			color: #6a88ad;
+			text-decoration: underline;
+			padding-left: 18px;
+			position: relative;
+		}
+			
+		.menu li a:hover {
+			color: #3d5f87;
+		}
+
+		.menu > ul > li > a::before,
+		.menu li li a::before {
+			content: "";
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='36' viewBox='0 0 12 36'><rect x='1' y='1' width='10' height='10' fill='white' stroke='black'/><line x1='3' y1='6' x2='9' y2='6' stroke='black' stroke-width='1.2'/><rect x='1' y='13' width='10' height='10' fill='white' stroke='black'/><line x1='3' y1='18' x2='9' y2='18' stroke='black' stroke-width='1.2'/><line x1='6' y1='15' x2='6' y2='21' stroke='black' stroke-width='1.2'/><circle cx='6' cy='30' r='1.8' fill='black'/></svg>");
+			background-repeat: no-repeat;
+		}
+
+		.menu > ul > li > a::before {
+			background-position: 0 0;
+		}
+
+		.menu li li a::before {
+			background-position: 0 -24px;
+		}
+			
+		.menu li ul {
+			display: none;
+			padding-left: 20px;
+			margin-top: 8px;
+		}
+			
+		.menu li li {
+			margin: 6px 0;
+		}
+
+		.menu li:hover > ul {
+			display: block;
+		}
+
+		.menu li:hover > a::before {
+			background-position: 0 -12px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+	<nav class="menu">
+		<ul>
+			<li><a href="#">Фильмы</a>
+				<ul>
+					<li><a href="#">Экшн</a></li>
+					<li><a href="#">Мелодрамы</a></li>
+					<li><a href="#">Сериалы</a></li>
+					<li><a href="#">Семейные</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Музыка</a>
+				<ul>
+					<li><a href="#">Классика</a></li>
+					<li><a href="#">Джаз</a></li>
+					<li><a href="#">Рок</a></li>
+					<li><a href="#">Грандж</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Софт</a>
+				<ul>
+					<li><a href="#">Графика</a></li>
+					<li><a href="#">3D-моделирование</a></li>
+					<li><a href="#">Машинопись</a></li>
+					<li><a href="#">Переводчики</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Игры</a>
+				<ul>
+					<li><a href="#">РПГ</a></li>
+					<li><a href="#">Шутеры</a></li>
+					<li><a href="#">Пасьянсы</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
