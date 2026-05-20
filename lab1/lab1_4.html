@@ -3,73 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Изображения</title>
+  <title>lab1_4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    h1, h2 {
+      color: #0b57d0;
+    }
+
+    .block {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+
+    figure {
+      margin: 10px 0 0 0;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-style: italic;
+      color: #555;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Изображения</h1>
+  <h1>Иллюстрация атрибутов элемента img</h1>
 
-    <h2>Элемент <code>img</code></h2>
-    <p>Элемент <code>img</code> внедряет изображение в текущий документ в месте определения элемента. Элемент <code>img</code> не имеет содержимого — он замещается на ходу изображением, указанным в атрибуте <code>src</code>.</p>
-    <p><b>Задание 1.</b> Вставьте на страницу изображение <code>aquaria.jpg</code></p>
-    <img src="images/aquaria.jpg" alt="Изображение aquaria" width="500">
-
-    <h2>Альтернативный текст</h2>
-    <p>Атрибут <code>alt</code> предоставляет краткое описание изображения. Он содержит альтернативный текст, который отображается, если изображение не может быть выведено.</p>
-    <p><b>Задание 2.</b> Вставьте на страницу изображение с ошибочной ссылкой <code>slon.png</code></p>
-    <img src="images/slon.png" alt="Изображение не найдено: slon.png" width="300">
-
-    <h2>Размеры изображения</h2>
-    <p>Атрибуты <code>width</code> и <code>height</code> задают размеры области изображения.</p>
-    <p><b>Задание 3.</b> Вставьте на страницу изображение <code>redcat.jpg</code> с указанием его ширины и высоты.</p>
-    <img src="images/redcat.jpg" alt="Рыжий кот" width="400" height="300">
-
-    <p>Для добавления гибких изображений используют атрибуты <code>sizes</code> и <code>srcset</code>.</p>
-    <p><b>Задание 4.</b> Вставьте на страницу изображение <code>mushroom.jpg</code> или <code>mushroom_portrait.jpg</code> или <code>mushroom_landscape.jpg</code> или <code>mushroom_retina.jpg</code> в зависимости от условий.</p>
-
-    <img
-      src="images/mushroom.jpg"
-      srcset="
-        images/mushroom_portrait.jpg 300w,
-        images/mushroom_landscape.jpg 600w,
-        images/mushroom_retina.jpg 1200w
-      "
-      sizes="(max-width: 575px) 100vw, (max-width: 768px) 100vw, 600px"
-      alt="Изображение гриба"
-      width="600"
-    >
-
-    <h2>Подпись к изображению</h2>
-    <p>Для группирования изображения и подписи используется элемент <code>figure</code>, а описание задаётся через <code>figcaption</code>.</p>
-    <p><b>Задание 5.</b> Вставьте на страницу изображение <code>globus.gif</code> с подписью к нему.</p>
-
+  <div class="block">
+    <h2>1. Обычная вставка изображения</h2>
+    <p>Пример использования атрибута <code>src</code>.</p>
     <figure>
-      <img src="images/globus.gif" alt="Глобус" width="300">
-      <figcaption>Анимированное изображение глобуса</figcaption>
+      <img src="images/aquaria.jpg" alt="Аквариум">
+      <figcaption>Изображение aquaria.jpg, вставленное с помощью атрибута src.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>2. Альтернативный текст</h2>
+    <p>Если путь к изображению неверный, отображается текст из атрибута <code>alt</code>.</p>
+    <figure>
+      <img src="images/slon.png" alt="Изображение не найдено: слон">
+      <figcaption>Пример работы атрибута alt при ошибочной ссылке на изображение.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>3. Размеры изображения</h2>
+    <p>Использование атрибутов <code>width</code> и <code>height</code>.</p>
+    <figure>
+      <img src="images/redcat.jpg" alt="Рыжий кот" width="300" height="200">
+      <figcaption>Изображение redcat.jpg с заданными width и height.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>4. Адаптивные изображения</h2>
+    <p>Использование <code>srcset</code> и <code>sizes</code> для выбора подходящего варианта изображения.</p>
+    <figure>
+      <img
+        src="images/mushroom.jpg"
+        srcset="
+          images/mushroom_portrait.jpg 400w,
+          images/mushroom_landscape.jpg 800w,
+          images/mushroom_retina.jpg 1200w
+        "
+        sizes="(max-width: 600px) 100vw, 50vw"
+        alt="Гриб"
+      >
+      <figcaption>Пример использования srcset и sizes для адаптивного изображения.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>5. Подпись к изображению</h2>
+    <p>Группировка изображения и подписи через <code>figure</code> и <code>figcaption</code>.</p>
+    <figure>
+      <img src="images/globus.gif" alt="Глобус">
+      <figcaption>Изображение globus.gif с подписью.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>6. Элемент picture</h2>
+    <p>Выбор оптимального формата изображения в зависимости от поддержки браузера.</p>
+    <figure>
+      <picture>
+        <source srcset="images/html5-logo.svg" type="image/svg+xml">
+        <img src="images/html5-logo.png" alt="Логотип HTML5">
+      </picture>
+      <figcaption>Пример использования picture для выбора формата изображения.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <h2>7. Современные форматы изображений</h2>
+    <p>Примеры изображений в форматах WebP и AVIF.</p>
+    <figure>
+      <img src="images/muscle.webp" alt="Изображение в формате WebP">
+      <figcaption>Изображение muscle.webp в современном формате WebP.</figcaption>
     </figure>
 
-    <h2>Элемент picture</h2>
-    <p>Элемент <code>picture</code> позволяет выбирать оптимальный формат изображения для браузера.</p>
-    <p><b>Задание 6.</b> Вставьте на страницу изображение <code>html5-logo</code> в растровом или векторном формате в зависимости от поддержки браузером этих форматов.</p>
-
-    <picture>
-      <source srcset="images/html5-logo.svg" type="image/svg+xml">
-      <img src="images/html5-logo.png" alt="Логотип HTML5" width="250">
-    </picture>
-
-    <h2>Оптимизация изображений</h2>
-    <p>Современные форматы WebP и AVIF позволяют уменьшить размер файлов при хорошем качестве изображения.</p>
-    <p><b>Задание 7.</b> Добавьте на страницу изображения <code>muscle.webp</code> и <code>light.avif</code>.</p>
-
     <figure>
-      <img src="images/muscle.webp" alt="Изображение muscle в формате WebP" width="300">
-      <figcaption>Изображение в формате WebP</figcaption>
+      <img src="images/light.avif" alt="Изображение в формате AVIF">
+      <figcaption>Изображение light.avif в современном формате AVIF.</figcaption>
     </figure>
-
-    <figure>
-      <img src="images/light.avif" alt="Изображение light в формате AVIF" width="300">
-      <figcaption>Изображение в формате AVIF</figcaption>
-    </figure>
-  </main>
+  </div>
 </body>
 </html>

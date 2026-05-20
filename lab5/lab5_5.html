@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Использование grid при построении колонок</title>
+<style>
+.wrapper{
+	display:grid;
+	grid-template-columns:200px 1fr 200px;
+}
+#left{
+	background:#ccf;
+}
+#center{
+	background:#cfc;
+}
+#right{
+	background:#fcc;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<div id="left">left<br>left<br>left<br>left<br>left</div>
+	<div id="center">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+	<div id="right">right<br>right<br>right<br>right</div>
+</div>
+</body>
+</html>
